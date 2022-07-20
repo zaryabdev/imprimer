@@ -2,6 +2,7 @@ const {
     app,
     BrowserWindow
 } = require("electron");
+const isDevelopment = process.env.NODE_ENV === "development";
 
 // This method is called when Electron
 // has finished initializing
@@ -20,7 +21,14 @@ app.whenReady().then(() => {
     // Load our HTML file
     // window.loadFile("index.html");
     // window.loadFile("app/dist/index.html");
-    window.loadURL("http://localhost:3003");
+    // window.loadURL("http://localhost:3003");
+    if (isDevelopment) {
+        console.log("dev");
+        window.loadURL("http://localhost:3003");
+    } else {
+        console.log("prod");
+        window.loadFile("app/dist/index.html");
+    }
 });
 
 // This method is called when Electron

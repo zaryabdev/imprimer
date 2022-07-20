@@ -5,7 +5,10 @@
   "main": "app/electron/main.js",
   "private": true,
   "scripts": {
-    "dev": "webpack --mode development --config ./webpack.config.js"
+    "dev-server": "webpack serve --mode development --config ./webpack.development.js",
+    "dev": "cross-env NODE_ENV=development electron .",
+    "preprod": "webpack --mode production --config ./webpack.production.js",
+    "prod": "cross-env NODE_ENV=production electron ."
   },
   "repository": {
     "type": "git",
@@ -19,6 +22,7 @@
   "homepage": "https://github.com/zaryabdev/imprimer#readme",
   "devDependencies": {
     "babel-loader": "^8.2.5",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "electron": "^19.0.8",
     "html-loader": "^4.1.0",
@@ -26,7 +30,8 @@
     "style-loader": "^3.3.1",
     "webpack": "^5.73.0",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.9.3"
+    "webpack-dev-server": "^4.9.3",
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "@babel/core": "^7.18.9",
