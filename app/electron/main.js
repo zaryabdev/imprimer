@@ -18,7 +18,8 @@ app.whenReady().then(() => {
         window.focus();
     });
     // Load our HTML file
-    window.loadFile("index.html");
+    // window.loadFile("index.html");
+    window.loadFile("app/dist/index.html");
 });
 
 // This method is called when Electron
