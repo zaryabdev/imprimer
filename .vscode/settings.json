@@ -1,7 +1,22 @@
 {
-    "workbench.colorCustomizations": {
-        "activityBar.background": "#1C3130",
-        "titleBar.activeBackground": "#284544",
-        "titleBar.activeForeground": "#F9FBFB"
-    }
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#1C3130",
+    "titleBar.activeBackground": "#284544",
+    "titleBar.activeForeground": "#F9FBFB"
+  },
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "'JetBrains Mono','Source Code Pro Medium', Consolas, 'Courier New', monospace",
+  "files.exclude": {
+    "**/.git": true, // this is a default value
+    "**/.DS_Store": true, // this is a default value
+
+    "**/node_modules": true, // this excludes all folders
+    // named "node_modules" from
+    // the explore tree
+
+    // alternative version
+    "node_modules": true // this excludes the folder
+    // only from the root of
+    // your workspace
+  }
 }
