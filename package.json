@@ -8,14 +8,42 @@
     "dev-server": "webpack serve --mode development --config ./webpack.development.js",
     "dev": "cross-env NODE_ENV=development electron .",
     "preprod": "webpack --mode production --config ./webpack.production.js",
-    "prod": "cross-env NODE_ENV=production electron ."
+    "prod": "cross-env NODE_ENV=production electron .",
+    "postinstall": "electron-builder install-app-deps",
+    "pack": "electron-builder --dir",
+    "dist": "npm run preprod && electron-builder",
+    "dist-mac": "npm run preprod && electron-builder --mac",
+    "dist-linux": "npm run preprod && electron-builder --linux",
+    "dist-windows": "npm run preprod && electron-builder --windows"
   },
+  "build": {
+    "productName": "Imprimer",
+    "appId": "com.electron.imprimer",
+    "directories": {
+      "buildResources": "resources"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "msi"
+      ]
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "snap",
+        "AppImage"
+      ]
+    }
+  },
+  "keywords": [],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zaryabdev/imprimer.git"
   },
   "author": "Zaryab",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/zaryabdev/imprimer/issues"
   },
@@ -25,6 +53,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "electron": "^19.0.8",
+    "electron-builder": "^23.1.0",
     "html-loader": "^4.1.0",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
