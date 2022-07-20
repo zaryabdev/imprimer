@@ -2,7 +2,8 @@
   "name": "imprimer",
   "version": "0.0.1",
   "description": "Dead simple billing application",
-  "main": "index.js",
+  "main": "app/electron/main.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/zaryabdev/imprimer/issues"
   },
-  "homepage": "https://github.com/zaryabdev/imprimer#readme"
+  "homepage": "https://github.com/zaryabdev/imprimer#readme",
+  "devDependencies": {
+    "electron": "^19.0.8"
+  }
 }
