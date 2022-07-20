@@ -19,7 +19,8 @@ app.whenReady().then(() => {
     });
     // Load our HTML file
     // window.loadFile("index.html");
-    window.loadFile("app/dist/index.html");
+    // window.loadFile("app/dist/index.html");
+    window.loadURL("http://localhost:3003");
 });
 
 // This method is called when Electron
